@@ -17,8 +17,13 @@
     "assets": {
       "master": [
         {
-          "file": "manifests/catalogue-db-deployment.yaml",
-          "target": "~/manifests"
+          "file": "manifests/catalogue-db-deployment.yaml", "target": "~/manifests",
+          "file": "manifests/catalogue-db-pvc.yaml", "target": "~/manifests",
+          "file": "manifests/catalogue-db-service.yaml", "target": "~/manifests",
+          "file": "manifests/catalogue-deployment.yaml", "target": "~/manifests",
+          "file": "manifests/catalogue-service.yaml", "target": "~/manifests",
+          "file": "manifests/front-end-deployment.yaml", "target": "~/manifests",
+          "file": "manifests/front-end-service.yaml", "target": "~/manifests"
         }
       ]
     },
