@@ -4,10 +4,11 @@
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
-    "steps": [{
-      "title": "Step 1 - Run Command",
-      "text": "step1.md"
-    }],
+    "steps": [
+      { "title": "Step 1 - Install Kubernetes", "text": "step1.md" },
+      { "title": "Step 2 - Install Istio", "text": "step2.md" },
+      { "title": "Step 3 - Install example application", "text": "step3.md" }
+    ],
     "intro": {
       "text": "intro.md",
       "credits": ""
@@ -22,5 +23,8 @@
   },
   "backend": {
     "imageid": "kubernetes-cluster"
+  },
+  "intro": {
+    "courseData": "courseBase.sh"
   }
 }
