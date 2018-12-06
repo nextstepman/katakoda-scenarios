@@ -1,8 +1,8 @@
 {
   "title": "Mini Cloud Native Training",
-  "description": "Setup kubernetes, istio and deploy an example application",
-  "difficulty": "beginner",
-  "time": "2 minutes",
+  "description": "Setup kubernetes, istio, deploy an example application and try out jaeger",
+  "difficulty": "intermediate",
+  "time": "20 minutes",
   "details": {
     "steps": [
       { "title": "Step 1 - Install Kubernetes", "text": "step1.md" },

@@ -19,7 +19,7 @@ Execute this command
 `kubectl create -f manifests`{{execute}}
 
 Now the sock shop should be installed, but with istio sidecars in it. 
-You can verify by having a look at the pods. Each should have two containers
+You can verify by having a look at the pods. catalogue and front-end should have two containers
 
 `kubectl get pods`{{execute}}
 
@@ -35,9 +35,12 @@ front-end-5d7c476645-ctvph      2/2       Running   0          1m
 
 Important is to have the `2/2` which shows that there are 2 containers in each pod.
 
+Note that I didn't enable istio on the catalogue-db, as this specific service makes problems as this has plain
+tcp connections, which is a bit more tricky to get right with istio. 
+
 ## Open the jaeger console
 
-Expose the jaeger console on a port
+Next you will use jaeger to view service traces. First we need to expose the jaeger console on a port.
 
 `kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=jaeger -ojsonpath='{.items[0].metadata.name}') 16686:16686 &> /dev/null &`{{execute}}
 
