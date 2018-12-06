@@ -29,3 +29,6 @@ then
   echo "The node is not Ready yet"
   exit 1
 fi
+
+echo done
+exit 0
