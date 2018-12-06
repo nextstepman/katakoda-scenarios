@@ -11,7 +11,8 @@
     ],
     "intro": {
       "text": "intro.md",
-      "credits": ""
+      "credits": "",
+      "courseData": "courseBase.sh"
     },
     "finish": {
       "text": "finish.md"
@@ -23,8 +24,5 @@
   },
   "backend": {
     "imageid": "kubernetes-cluster"
-  },
-  "intro": {
-    "courseData": "courseBase.sh"
   }
 }
