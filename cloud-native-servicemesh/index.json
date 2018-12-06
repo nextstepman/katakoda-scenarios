@@ -27,11 +27,8 @@
   "environment": {
     "uilayout": "editor-terminal",
     "uimessage1": "\u001b[32mYour Interactive Bash Terminal on the master node.\u001b[m\r\n",
-
-    "environment": {
-      "showdashboard": true,
-      "dashboards": [{"name": "Jaeger 16687", "port": 16687}, {"name": "Sock Shop 18079", "port": 18079}]
-    }
+    "showdashboard": true,
+    "dashboards": [{"name": "Jaeger 16687", "port": 16687}, {"name": "Sock Shop 18079", "port": 18079}]
   },
   "backend": {
     "imageid": "kubernetes-cluster"
