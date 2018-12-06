@@ -14,17 +14,13 @@ First add istio to your path
 
 `export PATH="$PATH:$(echo /root/istio-*/bin)"`{{execute}}
 
-Change to the istio folder
-
-`cd istio-*`{{execute}}
-
 Add the istio custom ressource definition files
 
-`kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml`{{execute}}
+`kubectl apply -f istio-*/install/kubernetes/helm/istio/templates/crds.yaml`{{execute}}
 
 And deploy istio to your cluster
 
-`kubectl apply -f install/kubernetes/istio-demo-auth.yaml`{{execute}}
+`kubectl apply -f istio-*/install/kubernetes/istio-demo.yaml`{{execute}}
 
 ## Verify istio installation
 

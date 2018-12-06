@@ -1,28 +1,44 @@
-Third step - setup an example application and deploy it.
+Third step - setup the sock shop application and deploy it.
 
-## Task
+## Install the sock shop application
 
-First setup kubernetes on the master node
+Deploy the files from the manifest folder. This will setup the sock shop application.
+See https://github.com/microservices-demo for more info about that application
 
-`kubeadm init --pod-network-cidr=10.244.0.0/16`{{execute}}
+Execute this command to deploy it:
 
-Setup your kubectl to connect to kubernetes
 
-`export KUBECONFIG=/etc/kubernetes/admin.conf`{{execute}}
+`kubectl create -f manifests`{{execute}}
 
-Wait until the cluster is up
+Next wait until the sock shop is deployed. Execute this command to check its status
 
-`kubectl get cs`{{execute}}
+`kubectl get pods`{{execute}}
 
-This will output something like this:
+It should show all pods as running.
 
+## Open the sock shop
+
+Find the port the sock shops frontend is exposed
+
+`kubectl get service front-end`{{execute}}
+
+This will display something like this:
 ```
-kubeadm join 172.17.0.45:6443 --token 95dvw1.w1uinl5y6o2rhxdg --discovery-token-ca-cert-hash sha256:25f43a069a0cdb8d894d5bdd9a86fba7f394f2aeec797bfa26cd004818abbdb3
+master $ kubectl get service front-end
+NAME        TYPE       CLUSTER-IP    EXTERNAL-IP   PORT(S)          AGE
+front-end   NodePort   10.96.71.84   <none>        8079:30922/TCP   8m
 ```
 
-Copy the output (not the above example) and execute it on the second kubernetes node by ssh'ing into that node like this:
+Find the port the service is exposed at. In above example this is 30922
 
-`ssh node01`{{execute}}
+## Open a web browser in katacoda to that port
+
+Click on the "+" next to the terminal, select "Select port to view on Host 1" and open it.
+Enter above port.
+
+You should now get a browser connect to the sock shop application
+
+
 
 
 
