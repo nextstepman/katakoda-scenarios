@@ -13,6 +13,14 @@
       "text": "intro.md",
       "credits": ""
     },
+    "assets": {
+      "master": [
+        {
+          "file": "manifests/catalogue-db-deployment.yaml",
+          "target": "~/manifests"
+        }
+      ]
+    },
     "finish": {
       "text": "finish.md"
     }
