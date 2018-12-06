@@ -29,7 +29,7 @@ Open this link to access the browser
 
 https://[[HOST_SUBDOMAIN]]-18079-[[KATACODA_HOST]].environments.katacoda.com/
 
-## kill the processes again
+## Clean up and kill the port forwarding processes again
 
 Above snippet created two background jobs in the shell. 
 Run this command to stop them again. 

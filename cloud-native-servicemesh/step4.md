@@ -29,7 +29,7 @@ This should look something like this:
 master $ kubectl get pods
 NAME                            READY     STATUS    RESTARTS   AGE
 catalogue-75fdd68798-kqwzb      2/2       Running   0          1m
-catalogue-db-7d56b449cf-whlqn   2/2       Running   0          1m
+catalogue-db-7d56b449cf-whlqn   1/1       Running   0          1m
 front-end-5d7c476645-ctvph      2/2       Running   0          1m
 ```
 
@@ -49,6 +49,8 @@ Open this link to access Jaeger ihe browser
 
 https://[[HOST_SUBDOMAIN]]-16687-[[KATACODA_HOST]].environments.katacoda.com/
 
+For now you won't see much there, we need to create some traffic
+
 ## Open a console to the sock shop
 
 Expose the web front end on a port
@@ -63,7 +65,11 @@ Open this link to access the browser
 
 https://[[HOST_SUBDOMAIN]]-18079-[[KATACODA_HOST]].environments.katacoda.com/
 
-## kill the processes again
+Now access the catalog some time to create some traffic.
+Go back to the jaeger console and select "front-end" in the drop down box. Reload if it is not there yet. Next click *Find Traces*. 
+Now you should see some.
+
+## Clean up and kill the port forwarding processes again
 
 Above snippet created background jobs in the shell. 
 Run this command to stop them again. 
