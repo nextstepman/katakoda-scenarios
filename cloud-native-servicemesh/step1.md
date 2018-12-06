@@ -1,7 +1,16 @@
-This is your first step.
+First step - install Kubernetes
 
 ## Task
 
-This is an _example_ of creating a scenario and running a **command**
+First setup kubernetes on the master node
 
-`echo 'Hello World'`{{execute}}
+`kubeadm init --pod-network-cidr=10.244.0.0/1`{{execute}}
+
+Setup your kubectl to connect to kubernetes
+
+`export KUBECONFIG=/etc/kubernetes/admin.conf` {{execute}}
+
+Wait until the cluster is up
+
+`kubectl get cs` {{execute}}
+
