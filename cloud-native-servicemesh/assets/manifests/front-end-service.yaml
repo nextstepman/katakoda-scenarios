@@ -6,7 +6,6 @@ metadata:
     app: front-end
   name: front-end
 spec:
-  type: NodePort
   ports:
   - name: "http"
     port: 8079

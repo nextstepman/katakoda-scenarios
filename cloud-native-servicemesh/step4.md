@@ -38,20 +38,20 @@ Important is to have the `2/2` which shows that there are 2 containers in each p
 
 ## Open the jaeger console
 
-First create a service with type node port, so we can access the jaeger console
+Expose the jaeger console on a port
 
-`kubectl expose deployment istio-tracing -n istio-system --port 16686 --type NodePort --name jaeger`{{execute}}
+`kubectl port-forward -n istio-system $(kubectl get pod -n istio-system -l app=jaeger -ojsonpath='{.items[0].metadata.name}') 16686:16686 &`{{execute}}
 
-Get the node port:
+And run socat to make that accessible from the outside
 
-`kubectl get service -n istio-system jaeger`{{execute}}
+`socat TCP-LISTEN:16687,fork TCP:127.0.0.1:16686 &`{{execute}}
 
-It should output something like this
-```
-master $ kubectl get service -n istio-system jaeger
-NAME      TYPE       CLUSTER-IP     EXTERNAL-IP   PORT(S)           AGE
-jaeger    NodePort   10.110.174.9   <none>        16686:31299/TCP   9s
-```
+## Open a console to the sock shop
 
-Copy the port behind the colon, which is 31299 in above example. 
-Click on the "+" next to terminal and open that port on Host "Host 1". You should get the Jaeger console
+Expose the web front end on a port
+
+`kubectl port-forward $(kubectl get pod -l app=front-end -ojsonpath='{.items[0].metadata.name}') 8079:8079 &`{{execute}}
+
+ And run socat to make that accessible from the outside
+ 
+`socat TCP-LISTEN:18079,fork TCP:127.0.0.1:8079 &`{{execute}}

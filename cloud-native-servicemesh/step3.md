@@ -33,10 +33,18 @@ Find the port the service is exposed at. In above example this is 30922
 
 ## Open a web browser in katacoda to that port
 
-Click on the "+" next to the terminal, select "Select port to view on Host 1" and open it.
-Enter above port.
+Expose the web front end on a port
 
-You should now get a browser connect to the sock shop application
+`kubectl port-forward $(kubectl get pod -l app=front-end -ojsonpath='{.items[0].metadata.name}') 8079:8079 &`{{execute}}
+
+ And run socat to make that accessible from the outside
+ 
+`socat TCP-LISTEN:18079,fork TCP:127.0.0.1:8079 &`{{execute}}
+
+Open this link:
+
+https://[[HOST_SUBDOMAIN]]-18079-[[KATACODA_HOST]].environments.katacoda.com/
+
 
 
 

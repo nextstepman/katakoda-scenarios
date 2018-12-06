@@ -6,7 +6,6 @@ metadata:
     app: catalogue
   name: catalogue
 spec:
-  type: NodePort
   ports:
   - name: "http"
     port: 80
