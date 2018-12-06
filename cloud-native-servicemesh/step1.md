@@ -1,4 +1,4 @@
-First step - install Kubernetes
+First step - setup Kubernetes. Kubernetes is already installed, but we need to setup the master node and join a slave node.
 
 ## First setup kubernetes on the master node
 
@@ -6,23 +6,22 @@ First step - install Kubernetes
 
 This will take some time. This will output something like this 
 
-
-
 ```
 ...
 
 Your Kubernetes master has initialized successfully!
-
 ...
 
-You can now join any number of machines by running the following on each node
-as root:
-
-  kubeadm join 172.17.0.16:6443 --token r930zf.w4esesenl99em6bw --discovery-token-ca-cert-hash sha256:62c3dd1266e46a3bd3b6d10a0a327e16494c7db8e04bf8a7d6321ad3d50a12fe
-kubeadm join 172.17.0.45:6443 --token ylq5y1.d2c70q3vnlhlc49l --discovery-token-ca-cert-hash sha256:ee81b6a09e53983bb62d3d1acefec501d8c24659cd278e1b1af35379474c9a37
 ```
 
-Execute this command to check your cluster:
+If this does not work, you can reset the setting by executing `kubeadm reset` but be careful, this destroys the complete setup and
+you will have to start from scratch.
+
+Execute this command to setup your kubectl environment
+
+`export KUBECONFIG=/etc/kubernetes/admin.conf`{{execute}}
+
+Next execute this command to check your cluster:
 
 `kubectl get nodes`{{execute}}
 
@@ -38,7 +37,9 @@ Now we have just a single cluster node.
 
 ## Join the first node
 
-`kubectl delete node node01 --ignore-not-found=true && ssh node01 kubeadm reset --force && ssh node01 $(kubeadm token create --print-join-command)`{{execute}}`
+Execute the following command to setup the kubernetes slave node and make it join the cluster.
+
+`kubectl delete node node01 --ignore-not-found=true && ssh node01 kubeadm reset --force && ssh node01 $(kubeadm token create --print-join-command)`{{execute}}
 
 What this long script does is:
 
@@ -48,8 +49,7 @@ What this long script does is:
 
 Answer yes if you get a message like this:
 ```
-The authenticity of host 'node01 (172.17.0.31)' can't be established.
-ECDSA key fingerprint is SHA256:QcAm6fpeYSCdk+ZK+J4tq1sLG/4P07eaLfe9H9jtTAo.
+...
 Are you sure you want to continue connecting (yes/no)? yes
 ```
 
@@ -67,11 +67,7 @@ Run 'kubectl get nodes' on the master to see this node join the cluster.
 
 ## Check that the node is there
 
-Execute this command to setup your kubectl environment
-
-`export KUBECONFIG=/etc/kubernetes/admin.conf`{{execute}}
-
-Next check that the node joined the cluster
+Execute this command to check that the node joined the cluster
 
 `kubectl get nodes`{{execute}}
 

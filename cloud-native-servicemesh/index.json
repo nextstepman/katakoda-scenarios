@@ -1,12 +1,12 @@
 {
   "title": "Mini Cloud Native Training",
-  "description": "Your First Scenario",
+  "description": "Setup kubernetes, istio and deploy an example application",
   "difficulty": "beginner",
   "time": "2 minutes",
   "details": {
     "steps": [
       { "title": "Step 1 - Install Kubernetes", "text": "step1.md", "verify": "step1-verify.sh" },
-      { "title": "Step 2 - Install Istio", "text": "step2.md" },
+      { "title": "Step 2 - Install Istio", "text": "step2.md", "verify": "step2-verify.sh" },
       { "title": "Step 3 - Install example application", "text": "step3.md" }
     ],
     "intro": {

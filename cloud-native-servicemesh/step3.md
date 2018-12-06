@@ -1,4 +1,4 @@
-First step - install Kubernetes
+Third step - setup an example application and deploy it.
 
 ## Task
 

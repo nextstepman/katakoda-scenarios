@@ -1,16 +1,38 @@
-First step - install Kubernetes
+Second step - setup istio. This requires that your kubernetes cluster is already up and running, which you did in Step 1.
 
-## Task
+## Download the latest ISTIO release
 
-First setup kubernetes on the master node
+Run the following command to download istio
 
-`kubeadm init --pod-network-cidr=10.244.0.0/16`{{execute}}
+`curl -L https://git.io/getLatestIstio | sh -`{{execute}}
 
-Setup your kubectl to connect to kubernetes
+This will download the latest version of ISTIO and unpack it
 
-`export KUBECONFIG=/etc/kubernetes/admin.conf`{{execute}}
+## Install istio in your cluster
 
-Wait until the cluster is up
+First add istio to your path
 
-`kubectl get cs`{{execute}}
+`export PATH="$PATH:$(echo /root/istio-*/bin)"`{{execute}}
+
+Change to the istio folder
+
+`cd istio-*`{{execute}}
+
+Add the istio custom ressource definition files
+
+`kubectl apply -f install/kubernetes/helm/istio/templates/crds.yaml`{{execute}}
+
+And deploy istio to your cluster
+
+`kubectl apply -f install/kubernetes/istio-demo-auth.yaml`{{execute}}
+
+## Verify istio installation
+
+Execute the following command to check if the istio pods got started
+
+`kubectl get pods --namespace istio-system`{{execute}}
+
+All pods should be either in status Running or Completed
+
+
 
