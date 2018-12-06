@@ -26,7 +26,7 @@
   },
   "environment": {
     "uilayout": "editor-terminal",
-    "uimessage1": "\u001b[32mYour Interactive Bash Terminal on the master node.\u001b[m\r\n",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal on the master node.\u001b[m\r\n"
   },
   "backend": {
     "imageid": "kubernetes-cluster"
