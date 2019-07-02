@@ -5,7 +5,6 @@ The purpose of this scenario is to have a sandbox to get started with flux, incl
 This scenario will walk you through the following steps
 
 1. Setup kubernetes cluster
-2. Install flux
 3. Install Flux and deploy the sock-shop application
 
 This scenario uses material from the following sources:
