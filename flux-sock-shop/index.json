@@ -1,0 +1,33 @@
+{
+  "title": "Mini Flux Training",
+  "description": "Setup kubernetes, install flux and use flux to deploy the sock-shop",
+  "difficulty": "intermediate",
+  "time": "20 minutes",
+  "details": {
+    "steps": [
+      { "title": "Step 1 - Install Kubernetes", "text": "step1.md" },
+      { "title": "Step 2 - Install Flux", "text": "step2.md" },
+      { "title": "Step 3 - Install sock-shop application", "text": "step3.md" }
+    ],
+    "intro": {
+      "text": "intro.md",
+      "credits": "",
+      "courseData": "courseBase.sh"
+    },
+    "assets": {
+      "master": [
+        { "file": "manifests/*", "target": "~/manifests" }
+      ]
+    },
+    "finish": {
+      "text": "finish.md"
+    }
+  },
+  "environment": {
+    "uilayout": "editor-terminal",
+    "uimessage1": "\u001b[32mYour Interactive Bash Terminal on the master node.\u001b[m\r\n"
+  },
+  "backend": {
+    "imageid": "kubernetes-cluster"
+  }
+}
