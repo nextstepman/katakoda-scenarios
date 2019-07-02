@@ -6,8 +6,7 @@
   "details": {
     "steps": [
       { "title": "Step 1 - Install Kubernetes", "text": "step1.md" },
-      { "title": "Step 2 - Install Flux", "text": "step2.md" },
-      { "title": "Step 3 - Install sock-shop application", "text": "step3.md" }
+      { "title": "Step 2 - Install Flux and deploy the sock-shop application", "text": "step2.md" }
     ],
     "intro": {
       "text": "intro.md",

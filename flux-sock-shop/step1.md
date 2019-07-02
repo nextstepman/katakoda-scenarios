@@ -86,15 +86,4 @@ Now again check the status of the nodes
 
 This should progress to Ready
 
-Make sure that above command outputs something like this, otherwise the Continue button won't let you
-
-```
-```
-
-
-
-
-
-
-
-
+Don't click Continue until status of all cluster nodes is Ready.
