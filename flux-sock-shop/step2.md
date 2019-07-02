@@ -72,3 +72,7 @@ Execute this command to see the deployed application:
 `kubectl get pods -n sock-shop`{{execute}}
 
 This should show that the sock shop was deployed.
+
+## Additional tasks
+
+Navigate to https://github.com/weaveworks/flux/blob/master/site/fluxctl.md and see what flux has to offer. Now you have a small sandbox to try things out.
